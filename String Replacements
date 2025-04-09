@@ -1,0 +1,9 @@
+// Step 1: Declare a string variable baseMessage with the specified value
+let baseMessage = "Hello, [Name]!";
+
+// Step 2: Replace [Name] in the string with your own name
+let name = "John"; // Replace "John" with your own name
+let personalizedMessage = baseMessage.replace("[Name]", name);
+
+// Step 3: Print the updated string
+console.log(personalizedMessage);
