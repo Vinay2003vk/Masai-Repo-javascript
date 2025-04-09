@@ -1,0 +1,13 @@
+const arr =[
+  {
+  Name: "Vinay",
+  Age: 21,
+  Marks:{
+  math:95,
+  science:90,
+  english:60,
+  }
+}
+];
+
+console.log(arr[0])
