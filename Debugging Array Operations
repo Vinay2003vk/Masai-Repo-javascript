@@ -1,0 +1,8 @@
+// The original code uses the .pop() method to remove the last element "Cherry", which is correct.
+// However, it attempts to add "Orange" to a non-existing index, fruits[3], which would result in an undefined slot in the array.
+// The fix is to use the .push() method to correctly add "Orange" to the end of the array.
+
+const fruits = ["Apple", "Banana", "Cherry"];
+fruits.pop(); // Removes the last element, "Cherry"
+fruits.push("Orange"); // Correctly adds "Orange" to the end of the array
+console.log(fruits);
