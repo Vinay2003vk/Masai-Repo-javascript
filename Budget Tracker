@@ -1,0 +1,15 @@
+// Step 1: Define the initial budget object
+let budget = {
+    income: 1000,
+    expenses: 700
+};
+
+// Step 2: Add a savings property
+budget.savings = budget.income - budget.expenses;
+
+// Step 3: Update income and recalculate savings
+budget.income = 1200;
+budget.savings = budget.income - budget.expenses;
+
+// Step 4: Print the updated budget object
+console.log(budget);
