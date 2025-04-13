@@ -1,0 +1,31 @@
+function determineAccess(role, experience, department, activeStatus) {
+    // Nested ternary operators to determine access privileges
+    const accessPrivileges = 
+        (role !== "admin" && role !== "manager" && role !== "user") ? "Invalid Role" :
+        (role === "admin") ? 
+            (!activeStatus ? "Admin Access Revoked" : 
+            (experience > 5 && department === "IT") ? "Full IT Admin Access" : 
+            (experience > 5) ? "Full General Admin Access" : 
+            "Limited Admin Access") :
+        (role === "manager") ? 
+            (!activeStatus ? "Manager Access Revoked" : 
+            (experience > 3 && department === "Sales") ? "Full Sales Manager Access" : 
+            (experience > 3) ? "Full Manager Access" : 
+            "Limited Manager Access") :
+        (role === "user") ? 
+            (!activeStatus ? "User Access Revoked" : 
+            (department === "Support") ? "Priority Support Access" : 
+            "User Access") :
+        "Invalid Role";
+
+    return accessPrivileges;
+}
+
+// Example usage:
+console.log(determineAccess("admin", 6, "IT", true)); // Output: Full IT Admin Access
+console.log(determineAccess("manager", 4, "Sales", true)); // Output: Full Sales Manager Access
+console.log(determineAccess("user", 2, "Support", true)); // Output: Priority Support Access
+console.log(determineAccess("admin", 2, "IT", false)); // Output: Admin Access Revoked
+console.log(determineAccess("manager", 2, "IT", true)); // Output: Limited Manager Access
+console.log(determineAccess("user", 1, "HR", true)); // Output: User Access
+console.log(determineAccess("guest", 3, "IT", true)); // Output: Invalid Role
