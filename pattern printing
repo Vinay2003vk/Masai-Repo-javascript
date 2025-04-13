@@ -1,0 +1,7 @@
+for (let i = 1; i <= 5; i++) { // Loop for each row from 1 to 5
+    let stars = ''; // Initialize a string to store stars for the current row
+    for (let j = 1; j <= i; j++) { // Loop to add stars for the current row
+        stars += '*'; // Concatenate a star to the string
+    }
+    console.log(stars); // Print the row of stars
+}
