@@ -1,0 +1,27 @@
+function generatePyramid() {
+    let rows = parseInt(prompt("Enter number of rows (1-10): "), 10);
+    
+    if (isNaN(rows) || rows < 1 || rows > 10) {
+        console.log("Please enter a valid number between 1 and 10.");
+        return;
+    }
+    
+    for (let i = 1; i <= rows; i++) {
+        let row = "";
+        
+        for (let j = 1; j <= i; j++) {
+            if (j % 3 === 0) {
+                continue; // Skip numbers divisible by 3
+            }
+            row += j + " ";
+        }
+        
+        if (i % 7 === 0) {
+            break; // Stop the pyramid if the current row number is divisible by 7
+        }
+        
+        console.log(row.trim());
+    }
+}
+
+generatePyramid();
