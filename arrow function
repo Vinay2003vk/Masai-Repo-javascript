@@ -1,7 +1,5 @@
-const calculateSquareAndCube = (num) => ({ square: num =2, cube: num =3 });
+const calculateSquareAndCube = num => ({ square: num**2, cube: num**3 });
 
-// Example Input
-const input = 5;
+// Example usage:
+console.log(calculateSquareAndCube(5)); //Output: { square: 25, cube: 125 }
 
-// Example Output
-console.log(calculateSquareAndCube(input)); // { square: 25, cube: 125 }
