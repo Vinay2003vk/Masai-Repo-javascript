@@ -1,0 +1,43 @@
+const products = [
+  { name: "Laptop", price: 1200, category: "Electronics" },
+  { name: "Phone", price: 800, category: "Electronics" },
+  { name: "Shirt", price: 40, category: "Clothing" },
+  { name: "Book", price: 20, category: "Stationery" },
+  { name: "Shoes", price: 100, category: "Clothing" }
+];
+
+// 1. map()
+// Write a function that returns a new array containing only the product names in uppercase using map().
+const productNamesUpperCase = products.map(product => product.name.toUpperCase());
+console.log(productNamesUpperCase);
+// Expected output: ["LAPTOP", "PHONE", "SHIRT", "BOOK", "SHOES"]
+
+// 2. filter()
+// Use filter() to return all products that belong to the "Clothing" category.
+const clothingProducts = products.filter(product => product.category === "Clothing");
+console.log(clothingProducts);
+// Expected output: [{ name: "Shirt", ... }, { name: "Shoes", ... }]
+
+// 3. sort()
+// Sort the products by price in ascending order using sort().
+const productsSortedByPrice = [...products].sort((a, b) => a.price - b.price);
+console.log(productsSortedByPrice);
+// Expected order: Book, Shirt, Shoes, Phone, Laptop
+
+// 4. forEach()
+// Use forEach() to print a sentence for each product.
+products.forEach(product => {
+  console.log(`The product ${product.name} costs $${product.price} and belongs to ${product.category} category.`);
+});
+// Expected output:
+// "The product Laptop costs $1200 and belongs to Electronics category."
+// "The product Phone costs $800 and belongs to Electronics category."
+// "The product Shirt costs $40 and belongs to Clothing category."
+// "The product Book costs $20 and belongs to Stationery category."
+// "The product Shoes costs $100 and belongs to Clothing category."
+
+// 5. reduce()
+// Use reduce() to calculate the total price of all products.
+const totalPrice = products.reduce((acc, product) => acc + product.price, 0);
+console.log(totalPrice);
+// Expected output: 2160
