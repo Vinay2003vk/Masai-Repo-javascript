@@ -1,0 +1,20 @@
+const user = { id: 123, profile: { name: "John Doe", address: { city: "Los Angeles", zipcode: "90001" } } };
+// const user = { id: 123, profile: { name: "John Doe" } }; // Uncomment to test with missing fields
+
+// Destructuring with optional chaining to extract user data
+const {
+    id,
+    profile: {
+        name,
+        address: {
+            city = "Information not available", // Default value for missing city
+            zipcode = "Information not available" // Default value for missing zipcode
+        } = {} // Default to an empty object in case address is missing
+    } = {} // Default to an empty object in case profile is missing
+} = user;
+
+// Creating the output message based on extracted values
+const output = `User ${name} (ID: ${id}) lives in ${city} (ZIP: ${zipcode})`;
+
+// Logging the output
+console.log(output);
